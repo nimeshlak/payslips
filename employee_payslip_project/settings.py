@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fa0b7yn^ym=4pbi&u31riwmwd0j5uq#1x7l8j6tq3j=0p+(d&_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['152.42.166.156']
 
 LOGIN_REDIRECT_URL = '/my-payslips/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
