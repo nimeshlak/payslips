@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Payslip Detail{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Payslip Details</h1>
+<div class="bg-white shadow p-6 rounded-lg">
+    <p><strong>Pay Date:</strong> {{ payslip.pay_date }}</p>
+    <p><strong>Amount:</strong> {{ payslip.amount }}</p>
+    <p class="mt-4"><strong>Details:</strong></p>
+    <p>{{ payslip.details }}</p>
+</div>
+<a href="{% url 'my_payslips' %}" class="mt-4 inline-block text-blue-500 hover:underline">Back to Payslips</a>
+{% endblock %}

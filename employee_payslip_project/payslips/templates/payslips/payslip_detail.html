@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Payslip Detail{% endblock %}
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div class="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6">
+        <div class="text-left mb-6">
+            <img src="/static/images/company_logo.jpg" alt="Company Logo" class="h-16">
+            <h2 class="text-xl font-semibold text-gray-700 mt-2">Concept CAFE</h2>
+            <p class="text-gray-500">Infront of the Bus Stop,Athrugiriya Road, Homagama.</p>
+        </div>
+        <h1 class="text-3xl font-semibold text-gray-800 text-center mb-6">Payslip Details</h1>
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <p class="text-lg text-gray-700"><strong>Employee Name:</strong> {{ payslip.employee }}</p>
+                <p class="text-lg text-gray-700"><strong>Employee ID:</strong> {{ payslip.employee_id }}</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <p class="text-lg text-gray-700"><strong>Pay Date:</strong> {{ payslip.pay_date }}</p>
+                <p class="text-lg text-gray-700"><strong>Amount:</strong> ${{ payslip.amount }}</p>
+            </div>
+            <p class="text-lg text-gray-700 mt-4 font-semibold">Details:</p>
+            <pre class="text-gray-600 whitespace-pre-wrap border p-4 bg-white rounded-lg">{{ payslip.details }}</pre>
+        </div>
+        <div class="mt-6 text-center">
+            <a href="{% url 'my_payslips' %}" class="text-blue-500 hover:text-blue-700 font-medium transition duration-200">← Back to Payslips</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

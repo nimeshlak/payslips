@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}My Payslips{% endblock %}
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-3xl font-semibold text-gray-800 text-center mb-6">My Payslips</h1>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+                <thead>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="py-3 px-6 text-left">Pay Date</th>
+                        <th class="py-3 px-6 text-left">Amount</th>
+                        <th class="py-3 px-6 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for payslip in payslips %}
+                    <tr class="border-t hover:bg-gray-100 transition duration-200">
+                        <td class="py-3 px-6">{{ payslip.pay_date }}</td>
+                        <td class="py-3 px-6">${{ payslip.amount }}</td>
+                        <td class="py-3 px-6">
+                            <a href="{% url 'payslip_detail' payslip.pk %}" 
+                               class="text-blue-500 hover:text-blue-700 font-medium transition duration-200">View Details</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="py-6 text-center text-gray-600">No payslips found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

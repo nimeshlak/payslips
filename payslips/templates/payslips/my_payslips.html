@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}My Payslips{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">My Payslips</h1>
+<table class="min-w-full bg-white shadow rounded-lg">
+    <thead>
+        <tr class="bg-gray-200">
+            <th class="py-2 px-4">Pay Date</th>
+            <th class="py-2 px-4">Amount</th>
+            <th class="py-2 px-4">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for payslip in payslips %}
+        <tr class="border-t px-16">
+            <td class="py-2 px-4">{{ payslip.pay_date }}</td>
+            <td class="py-2 px-4">{{ payslip.amount }}</td>
+            <td class="py-2 px-4">
+                <a href="{% url 'payslip_detail' payslip.pk %}" class="text-blue-500 hover:underline">View Details</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3" class="py-4 text-center">No payslips found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
