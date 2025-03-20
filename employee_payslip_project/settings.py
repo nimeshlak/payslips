@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fa0b7yn^ym=4pbi&u31riwmwd0j5uq#1x7l8j6tq3j=0p+(d&_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['159.65.155.205']
+ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/my-payslips/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
