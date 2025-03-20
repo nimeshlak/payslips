@@ -24,9 +24,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'django-insecure-fa0b7yn^ym=4pbi&u31riwmwd0j5uq#1x7l8j6tq3j=0p+(d&_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['152.42.166.156']
+ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/my-payslips/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
